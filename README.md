@@ -165,7 +165,7 @@ Other Common Linux Commands And Steps For Arch, Ubuntu And Debian
 ```
 
 ```
-Every day use tools for Arch, Ubuntu Debian
+Every day use tools for Arch, Ubuntu, Debian
 
 edit text in konsole
 install nano from your repos
