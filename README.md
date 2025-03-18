@@ -34,6 +34,11 @@ Ive Made Tones Of Scripts And Applications Linux Based And I wish To Help Others
 Find Below Many Useful Tutorials For Linux
 Including Application Building And Complex Bash Commands Every Day Users Would Not Know
 
+first off watch this from chris titus tech he has many tips to give in this video 
+
+https://youtu.be/u0CIrKkBung?si=X7u6aIUhP7jTYLAA
+please show him some support if you can
+
 More To Come i Will Update This More Soon....
   
 
@@ -78,7 +83,7 @@ sudo apt-get clean
 <div align="center">
 auto remove unused packages
 <div align="center">
-
+sudo auto remove
 
 
 
