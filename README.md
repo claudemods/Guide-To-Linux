@@ -74,11 +74,9 @@ use command nmcli d wifi
 <div align="center">
 
 
-```
-
-
-
 <div align="center">
 to connect to wifi
-nmcli d wifi connect "BSSID" password "your password'
+  <div align="center">
+nmcli d wifi connect "BSSID" password "your password"
+    <div align="center">
 example full command 'fake credentials" nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior
