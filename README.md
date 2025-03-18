@@ -61,11 +61,6 @@ usermod -l "newusername" "oldusername"
 
 
 
-```
-
-<div align="center">
-
-
 
 ```
 ```
