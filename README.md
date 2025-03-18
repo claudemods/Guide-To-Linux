@@ -38,6 +38,11 @@ Including Application Building And Complex Bash Commands Every Day Users Would N
 
 More To Come i Will Update This More Soon....
   
+
+
+
+```
+
 ```
 changing passwords, usernames, homefolder,
 
@@ -51,6 +56,7 @@ usermod -l "newusername" "oldusername"
 
 
 
+```
 ```
 setup wifi in konsole 
 to get a wifi list 
