@@ -112,6 +112,11 @@ simply login to root account
 usermod -l "newusername" "oldusername"
 
 
+change home folder
+sudo usermod -d /new/home/folder -m new_username
+
+add user to group
+sudo usermod -aG groupname username
 
 
 
