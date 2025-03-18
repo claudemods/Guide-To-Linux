@@ -94,7 +94,7 @@ sudo apt-get clean
 <div align="center">
 auto remove unused packages
 <div align="center">
-sudo autoremove
+sudo apt autoremove
 
 
 
