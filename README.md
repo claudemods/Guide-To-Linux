@@ -41,17 +41,22 @@ More To Come i Will Update This More Soon....
 
 ```
 
+
+<div align="center">
+changing passwords, usernames, homefolder,
+<div align="center">
+to change your password
+  <div align="center">
+use command sudo passwd "username" e.g sudo passwd root
+    <div align="center">
+enter your password
 <div align="center">
 
-```
-changing passwords, usernames, homefolder,
-
-to change your password
-use command sudo passwd "username" e.g sudo passwd root
-enter your password
-
+<div align="center">
 change your username, and home folder
+  <div align="center">
 simply login to root account
+    <div align="center">
 usermod -l "newusername" "oldusername"
 
 
