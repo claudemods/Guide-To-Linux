@@ -70,7 +70,7 @@ Update Package List
 <div align="center">
 sudo pacman -Syu
 <div align="center">
-Reboot Your System before next step
+Reboot Your System before next steps
 <div align="center">
   Clean Old Packages
   <div align="center">
@@ -86,7 +86,7 @@ sudo apt update
 <div align="center">
 sudo apt full-upgrade
 <div align="center">
-Reboot Your System Before Next Step
+Reboot Your System Before Next Steps
 <div align="center">
 Clean Old Packages
 <div align="center">
