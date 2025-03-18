@@ -76,6 +76,8 @@ Clean Old Packages
 <div align="center">
 sudo apt-get clean
 <div align="center">
+auto remove unused packages
+<div align="center">
 
 
 
