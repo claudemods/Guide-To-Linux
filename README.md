@@ -25,7 +25,7 @@ I Infact Tested Windows 8/8.1/10/11 Before They Came Out And Was Testing Kde Pla
 
 I Have Also Tested Skull And Bones By Ubisoft Before It Came Out I Like To Get Involved
 
-Since Im A Game Mod Creator/Music Creator 
+Since Im A Game Mod Creator/Music Creator And Now A Software Engineer
 
 I Have Alot Of Time On My Hands From Not Having A Job Since Putting My Game Mod Updates On Hold 
 
