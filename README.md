@@ -161,3 +161,19 @@ Other Common Linux Commands And Steps For Arch, Ubuntu And Debian
  Guide To Setting Up Arch, Ubuntu , Debian To Compile Cpp Applications
 
 
+
+```
+
+```
+Every day use tools for Arch, Ubuntu Debian
+
+edit text in konsole
+install nano from your repos
+
+
+custom application manager
+
+
+
+custom dns manager
+https://github.com/DnsChanger/dnsChanger-desktop
