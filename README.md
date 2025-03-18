@@ -33,7 +33,7 @@ I Have Alot Of Time On My Hands From Not Having A Job Since Putting My Game Mod 
 
 Ive Made Tones Of Scripts And Applications Linux Based And I wish To Help Others From What Ive Learnt
 
-Find Below Many Useful Tutorial For Linux
+Find Below Many Useful Tutorials For Linux
 Including Application Building And Complex Bash Commands Every Day Users Would Not Know
 
 More To Come i Will Update This More Soon....
