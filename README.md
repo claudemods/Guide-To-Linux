@@ -14,6 +14,8 @@ simply login to root account
 usermod -l "newusername" "oldusername"
 
 
+
+```
 setup wifi in konsole 
 to get a wifi list 
 use command nmcli d wifi 
