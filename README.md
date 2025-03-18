@@ -39,6 +39,47 @@ More To Come i Will Update This More Soon....
 
 ```
 
+Arch Updating
+<div align="center">
+Update Package List
+<div align="center">
+  sudo pacman -Sy
+<div align="center">
+  Update All Installed Packages
+<div align="center">
+sudo pacman -Syu
+<div align="center">
+Reboot Your System before next step
+<div align="center">
+  Clean Old Packages
+  <div align="center">
+sudo pacman -Scc
+
+Ubuntu/Debian
+<div align="center">
+  Update Package List
+<div align="center">
+sudo apt update
+  <div align="center">
+    Update All Installed Packages
+<div align="center">
+sudo apt full-upgrade
+<div align="center">
+Reboot Your System Before Next Step
+<div align="center">
+Clean Old Packages
+<div align="center">
+sudo apt-get clean
+<div align="center">
+
+
+
+
+
+
+
+
+
 
 <div align="center">
 changing passwords, usernames, homefolder,
@@ -89,35 +130,3 @@ Common Linux Commands And Steps For Arch, Ubuntu And Debian
 System Commands For Updating
 <div align="center"> 
 
-Arch Updating
-<div align="center">
-Update Package List
-<div align="center">
-  sudo pacman -Sy
-<div align="center">
-  Update All Installed Packages
-<div align="center">
-sudo pacman -Syu
-<div align="center">
-Reboot Your System before next step
-<div align="center">
-  Clean Old Packages
-  <div align="center">
-sudo pacman -Scc
-
-Ubuntu/Debian
-<div align="center">
-  Update Package List
-<div align="center">
-sudo apt update
-  <div align="center">
-    Update All Installed Packages
-<div align="center">
-sudo apt full-upgrade
-<div align="center">
-Reboot Your System Before Next Step
-<div align="center">
-Clean Old Packages
-<div align="center">
-sudo apt-get clean
-<div align="center">
