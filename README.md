@@ -40,7 +40,10 @@ More To Come i Will Update This More Soon....
   
 
 ```
-div align="center">
+
+
+
+<div align="center">
 first off watch this from Chris Titus Tech 
 <div align="center">
 he has many tips to give in this video 
