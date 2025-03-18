@@ -80,7 +80,7 @@ to connect to wifi
 nmcli d wifi connect "BSSID" password "your password"
     <div align="center">
 example full command 'fake credentials" nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior
-
+<div align="center">
 
 <div align="center">
 Common Linux Commands And Steps For Arch, Ubuntu And Debian
