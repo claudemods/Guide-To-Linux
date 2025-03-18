@@ -63,9 +63,15 @@ usermod -l "newusername" "oldusername"
 
 ```
 
+```
+
+<div align="center">
 setup wifi in konsole 
+  <div align="center">
 to get a wifi list 
+    <div align="center">
 use command nmcli d wifi 
+<div align="center">
 
 
 ```
