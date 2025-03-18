@@ -39,9 +39,9 @@ Including Application Building And Complex Bash Commands Every Day Users Would N
 More To Come i Will Update This More Soon....
   
 
-
-
 ```
+
+<div align="center">
 
 ```
 changing passwords, usernames, homefolder,
