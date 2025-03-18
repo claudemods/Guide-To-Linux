@@ -172,8 +172,12 @@ install nano from your repos
 
 
 custom application manager
+https://github.com/vinifmor/bauh
 
 
 
 custom dns manager
 https://github.com/DnsChanger/dnsChanger-desktop
+
+appkication store website
+www.pling.com
