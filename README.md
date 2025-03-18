@@ -60,13 +60,19 @@ usermod -l "newusername" "oldusername"
 
 
 
+
 ```
-```
-```
+
 setup wifi in konsole 
 to get a wifi list 
 use command nmcli d wifi 
 
+
+```
+
+
+
+<div align="center">
 to connect to wifi
 nmcli d wifi connect "BSSID" password "your password'
 example full command 'fake credentials" nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior
