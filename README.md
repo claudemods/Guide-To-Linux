@@ -14,13 +14,14 @@ claudemods Guide To Linux
  History Of My Self Aaron Douglas D'souza Im 28 From London In The Uk Though I Live In Manchester Now
 
 I Hate The Word Noob or Newbie But i Was Once A New Linux User I Started Using Nobara
-                                  Around September 2023 time 
+                 Around September 2023 time 
 from There I Started Making A Custom Taskbar which Can Be Seen In This Project Link Below
 Though The Original Colour Was Bungundy And Called SpitFire
 Project Link https://github.com/claudemods/ApexKLGE-Minimal
 
 More Photos Of My Old Projects https://www.claudemods.co.uk/distributions/theme-photos
-I Was Originally A Advanced Windows User I Like To Test Betas/Devs I Infact Tested Windows 8/8.1/10/11 Before They Came Out And Was Testing Kde Plasma 6 Before It Came Out
+I Was Originally A Advanced Windows User I Like To Test Betas/Devs
+ I Infact Tested Windows 8/8.1/10/11 Before They Came Out And Was Testing Kde Plasma 6 Before It Came Out
 
 I Have Also Tested Skull And Bones By Ubisoft Before It Came Out I Like To Get Involved
 
@@ -30,7 +31,8 @@ I Have Alot Of Time On My Hands From Not Having A Job Since Putting My Game Mod 
 
 Ive Made Tones Of Scripts And Applications Linux Based And I wish To Help Others From What Ive Learnt
 
-Find Below Many Useful Tutorial For Linux Including Application Building And Complex Bash Command Every Day User Would Not Know
+Find Below Many Useful Tutorial For Linux
+Including Application Building And Complex Bash Commands Every Day Users Would Not Know
 
 More To Come i Will Update This More Soon....
   
