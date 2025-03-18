@@ -43,13 +43,15 @@ More To Come i Will Update This More Soon....
 
 
 
-<div align="center">
+
+```
+
 first off watch this from Chris Titus Tech 
-<div align="center">
+
 he has many tips to give in this video 
-<div align="center">
+
 https://youtu.be/u0CIrKkBung?si=X7u6aIUhP7jTYLAA
-<div align="center">
+
 please support him if you can
 
 
