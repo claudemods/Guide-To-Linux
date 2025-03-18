@@ -50,7 +50,7 @@ he has many tips to give in this video
 <div align="center">
 https://youtu.be/u0CIrKkBung?si=X7u6aIUhP7jTYLAA
 <div align="center">
-please show him some support if you can
+please support him if you can
 
 
 
