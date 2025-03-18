@@ -3,10 +3,6 @@
 
 
 
-<p align="center">
-<img src="https://i.postimg.cc/JhMRf2RZ/claudemods-03-17-2025.gif">	
-
-
 <div align="center">
 Guide To Linux
 
