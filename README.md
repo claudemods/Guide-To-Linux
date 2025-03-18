@@ -39,6 +39,11 @@ More To Come i Will Update This More Soon....
 
 ```
 
+<div align="center">
+System Commands For Updating
+<div align="center"> 
+
+
 Arch Updating
 <div align="center">
 Update Package List
@@ -128,7 +133,4 @@ example full command 'fake credentials" nmcli d wifi connect 2E:FB:FA:B9:82:94 p
 <div align="center">
 Common Linux Commands And Steps For Arch, Ubuntu And Debian
 
-<div align="center">
-System Commands For Updating
-<div align="center"> 
 
