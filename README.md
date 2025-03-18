@@ -101,7 +101,7 @@ sudo apt autoremove
 
 ```
 
-changing passwords, usernames, homefolder,
+changing passwords, usernames, homefolder, add to group
 
 to change your password
 use command sudo passwd "username"
