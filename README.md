@@ -179,5 +179,5 @@ https://github.com/vinifmor/bauh
 custom dns manager
 https://github.com/DnsChanger/dnsChanger-desktop
 
-appkication store website
+application store website
 www.pling.com
