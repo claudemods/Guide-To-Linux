@@ -56,6 +56,9 @@ please support him if you can
 
 ```
 
+please remove the quotes e g "" from commands 
+they are hypothetical
+
 System Commands For Updating
 
 
@@ -113,7 +116,7 @@ usermod -l "newusername" "oldusername"
 
 
 change home folder
-sudo usermod -d /new/home/folder -m new_username
+sudo usermod -d /home/"yournewusername" -m "yournewusername"
 
 add user to group
 sudo usermod -aG groupname username
