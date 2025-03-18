@@ -57,7 +57,6 @@ please support him if you can
 ```
 
 System Commands For Updating
-<div align="center"> 
 
 
 Arch Updating
@@ -97,21 +96,19 @@ sudo apt autoremove
 
 
 
-<div align="center">
-changing passwords, usernames, homefolder,
-<div align="center">
-to change your password
-  <div align="center">
-use command sudo passwd "username" e.g sudo passwd root
-    <div align="center">
-enter your password
-<div align="center">
 
-<div align="center">
+changing passwords, usernames, homefolder,
+
+to change your password
+use command sudo passwd "username"
+e.g sudo passwd root
+enter your new password
+
+
+
 change your username, and home folder
-  <div align="center">
 simply login to root account
-    <div align="center">
+ change username
 usermod -l "newusername" "oldusername"
 
 
