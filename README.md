@@ -8,7 +8,8 @@ claudemods Guide To Linux
 <img src="https://i.postimg.cc/7LwstxCz/me.webp">	
 
 
-
+  
+```
 <div align="center">
  History Of My Self Aaron Douglas D'souza Im 28 From London In The Uk Though I Live In Manchester Now
 I Hate The Word Noob or Newbie But i Was Once A New Linux User I Started Using Nobara Around September 2023 time 
