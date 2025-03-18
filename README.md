@@ -83,9 +83,7 @@ example full command 'fake credentials" nmcli d wifi connect 2E:FB:FA:B9:82:94 p
 
 
 <div align="center">
-Commong linux Commands And Steps For Arch, Ubuntu And Debian
-<div align="center">
-
+Common Linux Commands And Steps For Arch, Ubuntu And Debian
 
 <div align="center">
 System Commands For Updating
