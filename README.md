@@ -15,13 +15,15 @@ Guide To Linux
 
 I Hate The Word Noob or Newbie But i Was Once A New Linux User I Started Using Nobara
                  Around September 2023 time 
+
 from There I Started Making A Custom Taskbar which Can Be Seen In This Project Link Below
 Though The Original Colour Was Bungundy And Called SpitFire
 Project Link https://github.com/claudemods/ApexKLGE-Minimal
 
 More Photos Of My Old Projects https://www.claudemods.co.uk/distributions/theme-photos
+
 I Was Originally A Advanced Windows User I Like To Test Betas/Devs
- I Infact Tested Windows 8/8.1/10/11 Before They Came Out And Was Testing Kde Plasma 6 Before It Came Out
+I Infact Tested Windows 8/8.1/10/11 Before They Came Out And Was Testing Kde Plasma 6 Before It Came Out
 
 I Have Also Tested Skull And Bones By Ubisoft Before It Came Out I Like To Get Involved
 
