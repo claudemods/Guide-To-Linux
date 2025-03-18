@@ -61,39 +61,30 @@ System Commands For Updating
 
 
 Arch Updating
-<div align="center">
+
 Update Package List
-<div align="center">
   sudo pacman -Sy
-<div align="center">
-  Update All Installed Packages
-<div align="center">
+
+Update All Installed Packages
 sudo pacman -Syu
-<div align="center">
+
 Reboot Your System before next steps
-<div align="center">
-  Clean Old Packages
-  <div align="center">
+Clean Old Packages
 sudo pacman -Scc
 
 Ubuntu/Debian
-<div align="center">
-  Update Package List
-<div align="center">
+
+Update Package List
 sudo apt update
-  <div align="center">
-    Update All Installed Packages
-<div align="center">
+
+Update All Installed Packages
 sudo apt full-upgrade
-<div align="center">
+
 Reboot Your System Before Next Steps
-<div align="center">
 Clean Old Packages
-<div align="center">
 sudo apt-get clean
-<div align="center">
+
 auto remove unused packages
-<div align="center">
 sudo apt autoremove
 
 
