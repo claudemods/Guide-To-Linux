@@ -141,6 +141,23 @@ example full command 'fake credentials"
 nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior
 
 
-Common Linux Commands And Steps For Arch, Ubuntu And Debian
+
+
+```
+
+```
+
+
+
+Other Common Linux Commands And Steps For Arch, Ubuntu And Debian
+
+
+
+
+
+```
+
+```
+ Guide Setting Up Arch, Ubuntu , Debian To Compile Cpp
 
 
