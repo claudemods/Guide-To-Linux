@@ -13,8 +13,10 @@ claudemods Guide To Linux
 
  History Of My Self Aaron Douglas D'souza Im 28 From London In The Uk Though I Live In Manchester Now
 
-I Hate The Word Noob or Newbie But i Was Once A New Linux User I Started Using Nobara Around September 2023 time 
-from There I Started Making A Custom Taskbar which Can Be Seen In This Project Link Below Though The Original Colour Was Bungundy And Called SpitFire
+I Hate The Word Noob or Newbie But i Was Once A New Linux User I Started Using Nobara
+                                  Around September 2023 time 
+from There I Started Making A Custom Taskbar which Can Be Seen In This Project Link Below
+Though The Original Colour Was Bungundy And Called SpitFire
 Project Link https://github.com/claudemods/ApexKLGE-Minimal
 
 More Photos Of My Old Projects https://www.claudemods.co.uk/distributions/theme-photos
