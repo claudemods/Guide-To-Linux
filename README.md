@@ -96,10 +96,6 @@ sudo apt autoremove
 
 ```
 
-
-
-
-
 changing passwords, usernames, homefolder,
 
 to change your password
