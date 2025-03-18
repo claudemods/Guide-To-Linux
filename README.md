@@ -56,7 +56,7 @@ please support him if you can
 
 ```
 
-please remove the quotes e g "" from commands 
+please remove the quotes "" from commands 
 they are hypothetical
 
 System Commands For Updating
