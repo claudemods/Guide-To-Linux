@@ -119,24 +119,20 @@ usermod -l "newusername" "oldusername"
 
 ```
 
-<div align="center">
+
 setup wifi in konsole 
-  <div align="center">
+
 to get a wifi list 
-    <div align="center">
 use command nmcli d wifi 
-<div align="center">
 
 
-<div align="center">
 to connect to wifi
-  <div align="center">
 nmcli d wifi connect "BSSID" password "your password"
-    <div align="center">
-example full command 'fake credentials" nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior
-<div align="center">
 
-<div align="center">
+example full command 'fake credentials"
+nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior
+
+
 Common Linux Commands And Steps For Arch, Ubuntu And Debian
 
 
