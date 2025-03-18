@@ -57,6 +57,13 @@ usermod -l "newusername" "oldusername"
 
 
 ```
+
+<div align="center">
+
+
+
+```
+```
 ```
 setup wifi in konsole 
 to get a wifi list 
