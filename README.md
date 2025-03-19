@@ -70,7 +70,7 @@ Clean Old Packages
 sudo pacman -Scc
 
 
-   <h1>Ubuntu/Debian Updated</h1>
+   <h1>Ubuntu/Debian Updating</h1>
 
 
 Update Package List
