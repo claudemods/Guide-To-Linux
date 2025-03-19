@@ -159,8 +159,22 @@ Other Common Linux Commands And Steps For Arch, Ubuntu And Debian
 
 ```
  Guide To Setting Up Arch, Ubuntu , Debian To Compile Cpp Applications
+ Arch Needed Packages To Compile Qt6 Applications
+sudo -S base-devel qt6-base qt6-tools
+Files Need To Compile Cpp
+main.cpp main.pro
+Other Things That Can Be Used
+.h files to add different functions within the project 
+resource.qrc to embedded other files
 
 
+Ubuntu/Debian Packages To Compile Qt6 Applications
+sudo apt install build-essentials qt6-base-dev
+Files Need To Compile Cpp
+main.cpp main.pro
+Other Things That Can Be Used
+.h files to add different functions within the project 
+resource.qrc to embedded other files
 
 ```
 
