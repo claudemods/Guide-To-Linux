@@ -156,52 +156,12 @@ resources.qrc to embed other files
 
 <div align="center">
 
-```
-Example Files For .pro And resources.qrc
 
-example .pro
-# Project name
-TARGET = apexisocreatorgui
+Example Files For .cpp .pro And resources.qrc
 
-# Required Qt modules
-QT += core gui widgets
-
-# Source files
-SOURCES += main.cpp
-HEADERS += squashfs.h
-HEADERS += usb.h
-HEADERS += isocreator.h
-HEADERS += setupscripts.h
-
-
-# C++ standard
-CONFIG += c++23
-
-RESOURCES += resources.qrc
-
-
-example resources.qrc
-<RCC>
-    <qresource prefix="/">
-        <file>images/ApexBrowser.png</file>
-        <file>images/burn.png</file>
-        <file>images/transfer-file.png</file>
-        <file>images/usb.png</file>
-        <file>images/machine.png</file>
-        <file>images/pirate-ship.png</file>
-    </qresource>
-        <qresource prefix="/config">
-            <file>scripts.zip</file>
-        </qresource>
-    </RCC>
-
-
-
-How To Compile The Qt6 Applications
-qmake6 -makefile
-make
-
-```
+<a href="https://github.com/claudemods/Guide-To-Linux/blob/main/example.cpp">Example main.cpp</a>
+<a href="https://github.com/claudemods/Guide-To-Linux/blob/main/example.pro">Example main.pro</a>
+<a href="https://github.com/claudemods/Guide-To-Linux/blob/main/example.qrc">Example resources.qrc</a>
 
 
 <div align="center">
