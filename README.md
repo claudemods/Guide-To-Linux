@@ -92,7 +92,7 @@ sudo apt autoremove
 <div align="center">
   <pre>
 
-  <h1>Changing Passwords, Usernames, Home Folder, and Adding to Group</h1>
+  <h1>Changing Passwords, Usernames, Home Folder, Adding to Group</h1>
 
 
 To Change Your Password
@@ -129,7 +129,7 @@ nmcli d wifi connect 2E:FB:FA:B9:82:94 password "tttodayjunior"
 
 <div align="center">
   <pre>
-        <h1>Other Common Linux Commands And Steps For Arch, Ubuntu And Debian</h1>
+        <h1>Common Linux Commands And Steps For Arch, Ubuntu And Debian</h1>
         install your drivers for your pc
         sudo apt install ubuntu-drivers-common
         sudo ubuntu-drivers autoinstall
@@ -140,7 +140,7 @@ nmcli d wifi connect 2E:FB:FA:B9:82:94 password "tttodayjunior"
 <div align="center">
   <pre>
     
-  <h1>Guide To Setting Up Arch, Ubuntu , Debian To Compile C++ Applications</h1>
+  <h1>Guide For Arch, Ubuntu , Debian To Compile C++ Applications</h1>
 
   <h1>Arch Needed Packages To Compile Qt6 Applications</h1>
 
