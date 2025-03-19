@@ -44,7 +44,7 @@ More To Come i Will Update This More Soon.
 
   <h1>First, Watch This Video from Chris Titus Tech</h1>
   <p>He shares many useful tips in this video:</p>
-  <a href="https://youtu.be/u0CIrKkBung?si=X7u6aIUhP7jTYLAA">Chris Titus Tech Video</a>
+  <a href="https://youtu.be/u0CIrKkBung?si=X7u6aIUhP7jTYLAA">Chris Titus Tech's Video</a>
   <p>Please support him if you can!</p>
 
 </div>
