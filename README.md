@@ -44,144 +44,111 @@ More To Come i Will Update This More Soon....
 
 
 
-```
 
-first off watch this from Chris Titus Tech 
+<div align="center">
+  <h1>First, Watch This Video from Chris Titus Tech</h1>
+  <p>He shares many useful tips in this video:</p>
+  <a href="https://youtu.be/u0CIrKkBung?si=X7u6aIUhP7jTYLAA">Chris Titus Tech Video</a>
+  <p>Please support him if you can!</p>
+</div>
 
-he has many tips to give in this video 
+<div align="center">
+  <h2>System Commands for Updating</h2>
 
-https://youtu.be/u0CIrKkBung?si=X7u6aIUhP7jTYLAA
+  <h3>Arch Linux</h3>
+  <p><strong>Update Package List</strong></p>
+  <code>sudo pacman -Sy</code>
 
-please support him if you can
+  <p><strong>Update All Installed Packages</strong></p>
+  <code>sudo pacman -Syu</code>
 
+  <p><strong>Reboot Your System Before Next Steps</strong></p>
+  <code>sudo reboot</code>
 
+  <p><strong>Clean Old Packages</strong></p>
+  <code>sudo pacman -Scc</code>
 
-```
+  <h3>Ubuntu/Debian</h3>
+  <p><strong>Update Package List</strong></p>
+  <code>sudo apt update</code>
 
-```
+  <p><strong>Update All Installed Packages</strong></p>
+  <code>sudo apt full-upgrade</code>
 
+  <p><strong>Reboot Your System Before Next Steps</strong></p>
+  <code>sudo reboot</code>
 
-please remove the quotes "" from commands 
-they are hypothetical
+  <p><strong>Clean Old Packages</strong></p>
+  <code>sudo apt-get clean</code>
 
-System Commands For Updating
+  <p><strong>Auto Remove Unused Packages</strong></p>
+  <code>sudo apt autoremove</code>
+</div>
 
+<div align="center">
+  <h2>Changing Passwords, Usernames, Home Folder, and Adding to Group</h2>
 
-Arch Updating
+  <p><strong>Change Your Password</strong></p>
+  <code>sudo passwd username</code>
+  <p>Example: <code>sudo passwd root</code></p>
 
-Update Package List
-  sudo pacman -Sy
+  <p><strong>Change Username and Home Folder</strong></p>
+  <p>1. Log in to the root account.</p>
+  <p>2. Change username:</p>
+  <code>usermod -l newusername oldusername</code>
 
-Update All Installed Packages
-sudo pacman -Syu
+  <p>3. Change home folder:</p>
+  <code>sudo usermod -d /home/yournewusername -m yournewusername</code>
 
-Reboot Your System before next steps
-Clean Old Packages
-sudo pacman -Scc
+  <p><strong>Add User to Group</strong></p>
+  <code>sudo usermod -aG groupname username</code>
+</div>
 
-Ubuntu/Debian
+<div align="center">
+  <h2>Setup Wi-Fi in Konsole</h2>
 
-Update Package List
-sudo apt update
+  <p><strong>Get a Wi-Fi List</strong></p>
+  <code>nmcli d wifi</code>
 
-Update All Installed Packages
-sudo apt full-upgrade
+  <p><strong>Connect to Wi-Fi</strong></p>
+  <code>nmcli d wifi connect BSSID password yourpassword</code>
+  <p>Example (fake credentials):</p>
+  <code>nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior</code>
+</div>
 
-Reboot Your System Before Next Steps
-Clean Old Packages
-sudo apt-get clean
+<div align="center">
+  <h2>Other Common Linux Commands and Steps for Arch, Ubuntu, and Debian</h2>
+</div>
 
-auto remove unused packages
-sudo apt autoremove
+<div align="center">
+  <h2>Guide to Setting Up Arch, Ubuntu, Debian to Compile C++ Applications</h2>
 
+  <h3>Arch Needed Packages to Compile Qt6 Applications</h3>
+  <code>sudo pacman -S base-devel qt6-base qt6-tools</code>
 
+  <h3>Files Needed to Compile C++</h3>
+  <p><code>main.cpp</code>, <code>main.pro</code></p>
 
+  <h3>Other Things That Can Be Used</h3>
+  <p><code>.h</code> files to add different functions within the project.</p>
+  <p><code>resources.qrc</code> to embed other files.</p>
 
-```
+  <h3>Ubuntu/Debian Packages to Compile Qt6 Applications</h3>
+  <code>sudo apt install build-essential qt6-base-dev</code>
 
-```
+  <h3>Files Needed to Compile C++</h3>
+  <p><code>main.cpp</code>, <code>main.pro</code></p>
 
-changing passwords, usernames, homefolder, add to group
+  <h3>Other Things That Can Be Used</h3>
+  <p><code>.h</code> files to add different functions within the project.</p>
+  <p><code>resources.qrc</code> to embed other files.</p>
+</div>
 
-to change your password
-use command sudo passwd "username"
-e.g sudo passwd root
-enter your new password
+<div align="center">
+  <h2>Example Files for .pro and resources.qrc</h2>
 
-
-
-change your username, and home folder
-simply login to root account
- change username
-usermod -l "newusername" "oldusername"
-
-
-change home folder
-sudo usermod -d /home/"yournewusername" -m "yournewusername"
-
-add user to group
-sudo usermod -aG groupname username
-
-
-
-```
-
-```
-
-
-setup wifi in konsole 
-
-to get a wifi list 
-use command nmcli d wifi 
-
-
-to connect to wifi
-nmcli d wifi connect "BSSID" password "your password"
-example full command 'fake credentials"
-nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior
-
-
-
-
-```
-
-```
-
-
-
-Other Common Linux Commands And Steps For Arch, Ubuntu And Debian
-
-
-
-
-
-```
-
-```
- Guide To Setting Up Arch, Ubuntu , Debian To Compile Cpp Applications
- Arch Needed Packages To Compile Qt6 Applications
-sudo -S base-devel qt6-base qt6-tools
-Files Need To Compile Cpp
-main.cpp main.pro
-Other Things That Can Be Used
-.h files to add different functions within the project 
-resources.qrc to embedded other files
-
-
-Ubuntu/Debian Packages To Compile Qt6 Applications
-sudo apt install build-essentials qt6-base-dev
-Files Need To Compile Cpp
-main.cpp main.pro
-Other Things That Can Be Used
-.h files to add different functions within the project 
-resources.qrc to embedded other files
-
-```
-```
-
-Example Files For .pro And resources.qrc
-
-example .pro
+  <h3>Example .pro File</h3>
+  <pre>
 # Project name
 TARGET = apexisocreatorgui
 
@@ -195,57 +162,50 @@ HEADERS += usb.h
 HEADERS += isocreator.h
 HEADERS += setupscripts.h
 
-
 # C++ standard
 CONFIG += c++23
 
 RESOURCES += resources.qrc
+  </pre>
 
+  <h3>Example resources.qrc File</h3>
+  <pre>
+&lt;RCC&gt;
+    &lt;qresource prefix="/"&gt;
+        &lt;file&gt;images/ApexBrowser.png&lt;/file&gt;
+        &lt;file&gt;images/burn.png&lt;/file&gt;
+        &lt;file&gt;images/transfer-file.png&lt;/file&gt;
+        &lt;file&gt;images/usb.png&lt;/file&gt;
+        &lt;file&gt;images/machine.png&lt;/file&gt;
+        &lt;file&gt;images/pirate-ship.png&lt;/file&gt;
+    &lt;/qresource&gt;
+    &lt;qresource prefix="/config"&gt;
+        &lt;file&gt;scripts.zip&lt;/file&gt;
+    &lt;/qresource&gt;
+&lt;/RCC&gt;
+  </pre>
+</div>
 
-example resources.qrc
-<RCC>
-    <qresource prefix="/">
-        <file>images/ApexBrowser.png</file>
-        <file>images/burn.png</file>
-        <file>images/transfer-file.png</file>
-        <file>images/usb.png</file>
-        <file>images/machine.png</file>
-        <file>images/pirate-ship.png</file>
-    </qresource>
-        <qresource prefix="/config">
-            <file>scripts.zip</file>
-        </qresource>
-    </RCC>
+<div align="center">
+  <h2>How to Compile Qt6 Applications</h2>
+  <code>qmake6 -makefile</code>
+  <code>make</code>
+</div>
 
+<div align="center">
+  <h2>Everyday Use Tools for Arch, Ubuntu, Debian</h2>
 
+  <p><strong>Edit Text in Konsole</strong></p>
+  <p>Install <code>nano</code> from your repos:</p>
+  <code>sudo pacman -S nano</code> (Arch)
+  <code>sudo apt install nano</code> (Ubuntu/Debian)
 
-```
-```
-How To Compile The Qt6 Applications
-qmake6 -makefile
-make
+  <p><strong>Custom Application Manager</strong></p>
+  <a href="https://github.com/vinifmor/bauh">bauh</a>
 
+  <p><strong>Custom DNS Manager</strong></p>
+  <a href="https://github.com/DnsChanger/dnsChanger-desktop">dnsChanger-desktop</a>
 
-
-
-
-
-```
-
-```
-Every day use tools for Arch, Ubuntu, Debian
-
-edit text in konsole
-install nano from your repos
-
-
-custom application manager
-https://github.com/vinifmor/bauh
-
-
-
-custom dns manager
-https://github.com/DnsChanger/dnsChanger-desktop
-
-application store website
-www.pling.com
+  <p><strong>Application Store Website</strong></p>
+  <a href="https://www.pling.com">www.pling.com</a>
+</div>
