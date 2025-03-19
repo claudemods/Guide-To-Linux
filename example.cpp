@@ -1,414 +1,323 @@
-#include <QApplication>
-#include <QWidget>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QTabWidget>
-#include <QPushButton>
-#include <QLineEdit>
-#include <QWebEngineView>
-#include <QWebEngineProfile>
-#include <QNetworkProxy>
-#include <QLabel>
-#include <QFileDialog>
-#include <QDir>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
+#include <fstream>
+#include <sstream>
+#include <thread>
+#include <chrono>
+#include <atomic>
+#include "Squashfs.h" // Include the SquashFS header file
+#include "IsoCreator.h" // Include the ISO creator header file
+#include "SetupScripts.h" // Include the Setup Scripts header file
+
+// Qt includes for QRC resource handling
 #include <QFile>
 #include <QTextStream>
-#include <QMessageBox>
-#include <QMenu>
-#include <QAction>
-#include <QDialog>
-#include <QComboBox>
-#include <QStyle>
-#include <QCursor>
+#include <QDebug>
 
-class BrowserWindow : public QWidget {
-    Q_OBJECT
-
-public:
-    BrowserWindow(QWidget *parent = nullptr) : QWidget(parent), incognitoMode(false) {
-        // Load saved theme on startup
-        loadTheme();
-
-        QVBoxLayout *mainLayout = new QVBoxLayout(this);
-        mainLayout->setContentsMargins(0, 0, 0, 0);
-        mainLayout->setSpacing(0);
-
-        tabWidget = new QTabWidget(this);
-        tabWidget->setTabsClosable(true);
-        mainLayout->addWidget(tabWidget);
-
-        openNewTab();
-
-        QHBoxLayout *navLayout = new QHBoxLayout();
-        navLayout->setContentsMargins(5, 5, 5, 5);
-        navLayout->setSpacing(5);
-
-        QPushButton *backButton = new QPushButton(QIcon(":/icons/back.png"), "", this);
-        styleButton(backButton, "Back");
-        navLayout->addWidget(backButton);
-
-        QPushButton *forwardButton = new QPushButton(QIcon(":/icons/forward.png"), "", this);
-        styleButton(forwardButton, "Forward");
-        navLayout->addWidget(forwardButton);
-
-        QPushButton *refreshButton = new QPushButton(QIcon(":/icons/refresh.png"), "", this);
-        styleButton(refreshButton, "Refresh");
-        navLayout->addWidget(refreshButton);
-
-        QPushButton *privacyButton = new QPushButton(QIcon(":/icons/privacy.png"), "", this);
-        styleButton(privacyButton, "Incognito Mode");
-        navLayout->addWidget(privacyButton);
-
-        urlBar = new QLineEdit(this);
-        urlBar->setPlaceholderText("Enter URL or search...");
-        urlBar->setStyleSheet(
-            "QLineEdit { "
-            "background-color: white; "
-            "color: black; "
-            "border: 2px solid gold; "
-            "border-radius: 5px; "
-            "padding: 5px; "
-            "}"
-        );
-        navLayout->addWidget(urlBar);
-
-        QPushButton *saveButton = new QPushButton(QIcon(":/icons/save.png"), "", this);
-        styleButton(saveButton, "Save URL to Bookmarks");
-        navLayout->addWidget(saveButton);
-
-        QPushButton *bookmarkButton = new QPushButton(QIcon(":/icons/bookmark.png"), "", this);
-        styleButton(bookmarkButton, "Show Bookmarks");
-        navLayout->addWidget(bookmarkButton);
-
-        QPushButton *newTabButton = new QPushButton(QIcon(":/icons/newtab.png"), "", this);
-        styleButton(newTabButton, "New Tab");
-        navLayout->addWidget(newTabButton);
-
-        settingsButton = new QPushButton(QIcon(":/icons/settings.png"), "", this);
-        styleButton(settingsButton, "Settings");
-        navLayout->addWidget(settingsButton, 0, Qt::AlignRight);
-
-        QPushButton *hideButton = new QPushButton(QIcon(":/icons/hide.png"), "", this);
-        styleButton(hideButton, "Close Browser");
-        navLayout->addWidget(hideButton);
-
-        mainLayout->addLayout(navLayout);
-
-        settingsPanel = new QWidget(this);
-        settingsPanel->setVisible(false);
-
-        QVBoxLayout *settingsLayout = new QVBoxLayout(settingsPanel);
-
-        QLabel *logoLabel = new QLabel(settingsPanel);
-        logoLabel->setPixmap(QPixmap(":/icons/ApexBrowser.png"));
-        logoLabel->setAlignment(Qt::AlignCenter);
-        settingsLayout->addWidget(logoLabel);
-
-        QLabel *textLabel = new QLabel(settingsPanel);
-        textLabel->setText(
-            "Apex Browser Information\n"
-            "Super Fast Custom Lightweight Qt6 Browser Written in C++ \n"
-            "Version: 1.0 Build Date: 05-02-2025."
-        );
-        textLabel->setStyleSheet(
-            "QLabel { "
-            "color: gold; "
-            "font-size: 16px; "
-            "font-weight: bold; "
-            "}"
-        );
-        textLabel->setAlignment(Qt::AlignCenter);
-        settingsLayout->addWidget(textLabel);
-
-        settingsLayout->addSpacerItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
-
-        QPushButton *menuButton = new QPushButton(QIcon(":/icons/menuoptions.png"), "", this);
-        styleButton(menuButton, "Menu");
-        settingsLayout->addWidget(menuButton, 0, Qt::AlignRight);
-
-        mainLayout->addWidget(settingsPanel);
-
-        connect(backButton, &QPushButton::clicked, this, &BrowserWindow::goBack);
-        connect(forwardButton, &QPushButton::clicked, this, &BrowserWindow::goForward);
-        connect(refreshButton, &QPushButton::clicked, this, &BrowserWindow::refreshPage);
-        connect(privacyButton, &QPushButton::clicked, this, &BrowserWindow::toggleIncognitoMode);
-        connect(urlBar, &QLineEdit::returnPressed, this, &BrowserWindow::navigateToUrl);
-        connect(saveButton, &QPushButton::clicked, this, &BrowserWindow::saveBookmark);
-        connect(bookmarkButton, &QPushButton::clicked, this, &BrowserWindow::showBookmarks);
-        connect(hideButton, &QPushButton::clicked, this, &BrowserWindow::hideBrowser);
-        connect(newTabButton, &QPushButton::clicked, this, &BrowserWindow::openNewTab);
-        connect(settingsButton, &QPushButton::clicked, this, &BrowserWindow::toggleSettingsPanel);
-        connect(menuButton, &QPushButton::clicked, this, &BrowserWindow::showMenu);
-        connect(tabWidget, &QTabWidget::tabCloseRequested, this, &BrowserWindow::closeTab);
-
-        setWindowTitle("Apex Browser");
-        resize(1024, 768);
-    }
-
-private slots:
-    void navigateToUrl() {
-        QString url = urlBar->text();
-        if (!url.startsWith("http://") && !url.startsWith("https://")) {
-            url = "https://" + url;
-        }
-        QWebEngineView *currentWebView = qobject_cast<QWebEngineView *>(tabWidget->currentWidget());
-        if (currentWebView) {
-            currentWebView->setUrl(QUrl(url));
-        }
-    }
-
-    void openNewTab() {
-        QWebEngineView *webView = new QWebEngineView(this);
-        webView->setUrl(QUrl("https://www.google.com"));
-
-        int tabIndex = tabWidget->addTab(webView, "New Tab");
-        tabWidget->setTabIcon(tabIndex, QIcon(":/icons/ApexBrowser.png"));
-        tabWidget->setCurrentIndex(tabIndex);
-
-        connect(webView, &QWebEngineView::urlChanged, this, [this, webView](const QUrl &url) {
-            if (webView == tabWidget->currentWidget()) {
-                urlBar->setText(url.toString());
-            }
-            int index = tabWidget->indexOf(webView);
-            if (index != -1) {
-                QString host = url.host();
-                tabWidget->setTabText(index, host.isEmpty() ? "New Tab" : host);
-            }
-        });
-
-        connect(webView, &QWebEngineView::titleChanged, this, [this, webView](const QString &title) {
-            int index = tabWidget->indexOf(webView);
-            if (index != -1) {
-                tabWidget->setTabText(index, title);
-            }
-        });
-    }
-
-    void closeTab(int index) {
-        QWidget *tab = tabWidget->widget(index);
-        tab->deleteLater();
-        tabWidget->removeTab(index);
-    }
-
-    void goBack() {
-        QWebEngineView *currentWebView = qobject_cast<QWebEngineView *>(tabWidget->currentWidget());
-        if (currentWebView) {
-            currentWebView->back();
-        }
-    }
-
-    void goForward() {
-        QWebEngineView *currentWebView = qobject_cast<QWebEngineView *>(tabWidget->currentWidget());
-        if (currentWebView) {
-            currentWebView->forward();
-        }
-    }
-
-    void refreshPage() {
-        QWebEngineView *currentWebView = qobject_cast<QWebEngineView *>(tabWidget->currentWidget());
-        if (currentWebView) {
-            currentWebView->reload();
-        }
-    }
-
-    void saveBookmark() {
-        QString url = urlBar->text();
-        if (url.isEmpty()) {
-            QMessageBox::warning(this, "No URL", "Please enter a URL to save.");
-            return;
-        }
-
-        QDir dir("/home/apex/.config/ApexBrowser");
-        if (!dir.exists()) {
-            dir.mkpath(".");
-        }
-
-        QFile file("/home/apex/.config/ApexBrowser/bookmarks.txt");
-        if (file.open(QIODevice::Append | QIODevice::Text)) {
-            QTextStream out(&file);
-            out << url << "\n";
-            file.close();
-            QMessageBox::information(this, "Bookmark Saved", "The URL has been saved to bookmarks.");
-        } else {
-            QMessageBox::warning(this, "Error", "Could not save bookmark.");
-        }
-    }
-
-    void showBookmarks() {
-        QFile file("/home/apex/.config/ApexBrowser/bookmarks.txt");
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QTextStream in(&file);
-            QStringList bookmarks;
-            while (!in.atEnd()) {
-                bookmarks << in.readLine();
-            }
-            file.close();
-
-            QMenu menu;
-            for (const QString &bookmark : bookmarks) {
-                menu.addAction(bookmark);
-            }
-            menu.exec(QCursor::pos());
-        } else {
-            QMessageBox::warning(this, "No Bookmarks", "No bookmarks found.");
-        }
-    }
-
-    void hideBrowser() {
-        close();
-    }
-
-    void toggleIncognitoMode() {
-        incognitoMode = !incognitoMode;
-
-        QWebEngineProfile *profile = QWebEngineProfile::defaultProfile();
-        if (incognitoMode) {
-            profile->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
-            profile->setHttpCacheType(QWebEngineProfile::NoCache);
-            QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::HttpProxy, "9.9.9.11", 80));
-            QMessageBox::information(this, "Incognito Mode", "Incognito mode is now active with Quad9 DNS.");
-        } else {
-            profile->setPersistentCookiesPolicy(QWebEngineProfile::AllowPersistentCookies);
-            profile->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
-            QNetworkProxy::setApplicationProxy(QNetworkProxy::NoProxy);
-            QMessageBox::information(this, "Incognito Mode", "Incognito mode is now inactive.");
-        }
-    }
-
-    void toggleSettingsPanel() {
-        settingsPanel->setVisible(!settingsPanel->isVisible());
-    }
-
-    void showMenu() {
-        QMenu menu;
-        QAction *option1 = menu.addAction("Change Theme"); // Theme selector
-        QAction *option2 = menu.addAction("Option 2");
-        QAction *option3 = menu.addAction("Option 3");
-        QAction *option4 = menu.addAction("Option 4");
-
-        QAction *selectedOption = menu.exec(QCursor::pos());
-        if (selectedOption == option1) {
-            showThemeSelector();
-        } else if (selectedOption == option2) {
-            QMessageBox::information(this, "Option 2", "Not Implemented.");
-        } else if (selectedOption == option3) {
-            QMessageBox::information(this, "Option 3", "Not Implemented");
-        } else if (selectedOption == option4) {
-            QMessageBox::information(this, "Option 4", "Not Implemented");
-        }
-    }
-
-    void showThemeSelector() {
-        QDialog dialog(this);
-        dialog.setWindowTitle("Select Theme");
-        dialog.resize(300, 200); // Smaller size
-
-        QVBoxLayout *dialogLayout = new QVBoxLayout;
-        QLabel *themeLabel = new QLabel("Select Theme:", &dialog);
-        QComboBox *themeSelector = new QComboBox(&dialog);
-        themeSelector->addItem("Blue UI / Gold Text");
-        themeSelector->addItem("Red UI / Black Text");
-        themeSelector->addItem("Dark Blue UI / White Text");
-        themeSelector->addItem("White UI / Red Text");
-        themeSelector->addItem("Green UI / Red Text");
-        themeSelector->addItem("Gold UI / Teal Text");
-
-        dialogLayout->addWidget(themeLabel);
-        dialogLayout->addWidget(themeSelector);
-
-        QPushButton *saveButton = new QPushButton("Save", &dialog);
-        dialogLayout->addWidget(saveButton);
-
-        connect(saveButton, &QPushButton::clicked, [&]() {
-            QString selectedTheme = themeSelector->currentText();
-            QString configPath = "/home/apex/.config/ApexBrowser/Theme.txt";
-
-            QDir dir("/home/apex/.config/ApexBrowser");
-            if (!dir.exists()) {
-                dir.mkpath(".");
-            }
-
-            QFile file(configPath);
-            if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-                QTextStream out(&file);
-                out << selectedTheme;
-                file.close();
-                setTheme(selectedTheme); // Apply the selected theme immediately
-                QMessageBox::information(&dialog, "Theme Saved", "Theme has been saved successfully.");
-            } else {
-                QMessageBox::warning(&dialog, "Error", "Failed to save theme.");
-            }
-            dialog.close();
-        });
-
-        dialog.setLayout(dialogLayout);
-        dialog.move(rect().center() - dialog.rect().center()); // Centered above .png buttons
-        dialog.exec();
-    }
-
-private:
-    QTabWidget *tabWidget;
-    QLineEdit *urlBar;
-    QWidget *settingsPanel;
-    QPushButton *settingsButton;
-    bool incognitoMode;
-
-    void styleButton(QPushButton *button, const QString &tooltip) {
-        button->setToolTip(tooltip);
-        button->setFixedSize(90, 30);
-        button->setStyleSheet(
-            "QPushButton { "
-            "background-color: transparent; "
-            "border: 2px solid gold; "
-            "border-radius: 5px; "
-            "padding: 5px; "
-            "} "
-            "QPushButton:hover { "
-            "background-color: rgba(255, 215, 0, 50); "
-            "}"
-        );
-    }
-
-    void setTheme(const QString &theme) {
-        if (theme == "Blue UI / Gold Text") {
-             setStyleSheet("QWidget { background-color: #00568f; color: rgb(255, 215, 0); }");
-        } else if (theme == "Red UI / Black Text") {
-            setStyleSheet("QWidget { background-color: rgb(255, 0, 0); color: rgb(0, 0, 0); }");
-        } else if (theme == "Dark Blue UI / White Text") {
-            setStyleSheet("QWidget { background-color: rgb(0, 0, 128); color: rgb(255, 255, 255); }");
-        } else if (theme == "White UI / Red Text") {
-            setStyleSheet("QWidget { background-color: rgb(255, 255, 255); color: rgb(255, 0, 0); }");
-        } else if (theme == "Green UI / Red Text") {
-            setStyleSheet("QWidget { background-color: rgb(0, 128, 0); color: rgb(255, 0, 0); }");
-        } else if (theme == "Gold UI / Teal Text") {
-            setStyleSheet("QWidget { background-color: rgb(255, 215, 0); color: rgb(0, 128, 128); }");
-        }
-    }
-
-    void loadTheme() {
-        QDir dir("/home/apex/.config/ApexBrowser");
-        if (!dir.exists()) {
-            dir.mkpath(".");
-        }
-
-        QString configPath = "/home/apex/.config/ApexBrowser/Theme.txt";
-        QFile file(configPath);
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QTextStream in(&file);
-            QString savedTheme = in.readLine();
-            file.close();
-            setTheme(savedTheme); // Apply the saved theme
-        } else {
-            setTheme("Teal UI / Gold Text"); // Default theme
-        }
-    }
-};
-
-int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);
-    BrowserWindow window;
-    window.show();
-    return app.exec();
+// Function to set text color using ANSI escape codes
+void setColor(const std::string &color) {
+    std::cout << color;
 }
 
-#include "main.moc"
+// Function to check if a file exists
+bool fileExists(const std::string &filePath) {
+    std::ifstream file(filePath);
+    return file.good();
+}
+
+// Function to print the contents of a file
+void printFileContents(const std::string &filePath, const std::string &message) {
+    if (fileExists(filePath)) {
+        setColor("\033[32m"); // Green color
+        std::cout << message << "\n";
+        std::ifstream file(filePath);
+        std::string line;
+        while (std::getline(file, line)) {
+            std::cout << line << "\n";
+        }
+    } else {
+        setColor("\033[31m"); // Red color
+        std::cout << message << "\n";
+    }
+    setColor("\033[0m"); // Reset color
+}
+
+// Function to print the status of vmlinuz and initramfs files
+void printVmlinuzInitramfsStatus() {
+    std::string vmlinuzFilePath = "/opt/Apex-Iso-Creator/Supported-Distros/Arch/Scripts/vmlinuz-init-time-generated.txt";
+    std::string imageLocationFilePath = "/opt/Apex-Iso-Creator/Supported-Distros/Arch/Scripts/Arch-Image-location.txt";
+    if (fileExists(vmlinuzFilePath)) {
+        setColor("\033[32m"); // Green color
+        std::ifstream vmlinuzFile(vmlinuzFilePath);
+        std::string dateTime;
+        if (std::getline(vmlinuzFile, dateTime)) {
+            size_t atPos = dateTime.find("at: ");
+            if (atPos != std::string::npos) {
+                std::string extractedDateTime = dateTime.substr(atPos + 4); // Extract everything after "at: "
+                std::cout << "Vmlinuz And Initramfs Copied/Generated " << extractedDateTime << "\n";
+            } else {
+                std::cout << "Vmlinuz And Initramfs Copied/Generated " << dateTime << "\n";
+            }
+        }
+    } else {
+        if (fileExists(imageLocationFilePath)) {
+            setColor("\033[32m"); // Green color
+            std::cout << "Copy And Generate vmlinuz and Initramfs With Option 3\n";
+        } else {
+            setColor("\033[31m"); // Red color
+            std::cout << "Copy And Generate vmlinuz and Initramfs With Option 3\n";
+        }
+    }
+    setColor("\033[0m"); // Reset color
+}
+
+// Function to clear the screen while keeping the ASCII art and title visible
+void clearScreenWithHeader() {
+    system("clear"); // Linux-specific command to clear the terminal
+    setColor("\033[31m"); // Red color
+    std::cout << R"(
+░█████╗░██╗░░░░░░█████╗░██║░░░██╗██████╗░███████╗███╗░░░███╗░█████╗░██████╗░░██████╗
+██╔══██╗██║░░░░░██╔══██╗██║░░░██║██╔══██╗██╔════╝████╗░████║██╔══██╗██╔══██╗██╔════╝
+██║░░╚═╝██║░░░░░███████║██║░░░██║██║░░██║█████╗░░██╔████╔██║██║░░██║██║░░██║╚█████╗░
+██║░░██╗██║░░░░░██╔══██║██║░░░██║██║░░██║██╔══╝░░██║╚██╔╝██║██║░░██║██║░░██║░╚═══██╗
+╚█████╔╝███████╗██║░░██║╚██████╔╝██████╔╝███████╗██║░╚═╝░██║╚█████╔╝██████╔╝██████╔╝
+░╚════╝░╚══════╝╚═╝░░░░░░╚═════╝░╚═════╝░╚══════╝╚═╝░░░░░╚═╝░╚════╝░╚═════╝░╚═════╝░
+)" << std::endl;
+
+setColor("\033[38;2;255;215;0m"); // Gold color
+std::cout << "Hello, welcome to Apex Arch Iso Creator v1.01 Build 18-03-2025\n\n";
+std::cout << "Sailing the 7 seas like Penguin's Eggs, Remastersys, Refracta, Systemback, and father Knoppix!\n\n";
+
+auto now = std::time(nullptr);
+auto localTime = *std::localtime(&now);
+std::cout << "Date and Time: " << std::put_time(&localTime, "%Y-%m-%d %H:%M:%S") << "\n";
+
+FILE* pipe = popen("df -h / | awk 'NR==2 {print $3, $4}'", "r");
+if (pipe) {
+    char buffer[128];
+    std::string result;
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+        result += buffer;
+    }
+    pclose(pipe);
+    std::istringstream iss(result);
+    std::string usedSize, availableSize;
+    iss >> usedSize >> availableSize;
+    std::cout << "Used System Space: " << usedSize << "\n";
+    std::cout << "Available System Space: " << availableSize << "\n\n";
+} else {
+    std::cout << "Failed to retrieve filesystem information.\n\n";
+}
+
+std::string imageLocationFilePath = "/opt/Apex-Iso-Creator/Supported-Distros/Arch/Scripts/Arch-Image-location.txt";
+if (fileExists(imageLocationFilePath)) {
+    setColor("\033[32m"); // Green color
+    std::ifstream imageLocationFile(imageLocationFilePath);
+    std::string imageLocation;
+    while (std::getline(imageLocationFile, imageLocation)) {
+        std::cout << "Current Build Image Location By Choice: " << imageLocation << "\n";
+    }
+} else {
+    setColor("\033[31m"); // Red color
+    std::cout << "Build Image Not Found, press option 3 to download and save Build Image.\n";
+}
+
+std::string isoNameFilePath = "/opt/Apex-Iso-Creator/Supported-Distros/Arch/Scripts/isoname.txt";
+if (fileExists(isoNameFilePath)) {
+    setColor("\033[32m"); // Green color
+    std::ifstream isoNameFile(isoNameFilePath);
+    std::string isoName;
+    while (std::getline(isoNameFile, isoName)) {
+        std::cout << "Current Iso Name By Choice: " << isoName << "\n";
+    }
+} else {
+    setColor("\033[31m"); // Red color
+    std::cout << "Iso Name Not Found, press option 3 to create ISO name.\n";
+}
+
+printVmlinuzInitramfsStatus();
+
+setColor("\033[38;2;255;215;0m"); // Gold color
+std::cout << "Apex Arch Iso Creator v1.0 Main Menu\n\n";
+setColor("\033[0m"); // Reset color
+}
+
+// Function to download and display the news file
+void downloadAndDisplayNews() {
+    if (fileExists("news.txt")) {
+        if (std::remove("news.txt") != 0) {
+            setColor("\033[31m");
+            std::cout << "Failed to delete existing new.txt file!\n";
+            setColor("\033[0m");
+            return;
+        }
+    }
+    std::string url = "https://sourceforge.net/projects/claudemods/files/App-Backend/claudemods-iso-creator-tools/ApexArchIsoCreator/ArchNews/readme.txt/download";
+    std::string command = "eval 'printf \"\\e[38;2;255;215;0m\"; wget -O news.txt \"" + url + "\" && cat news.txt; printf \"\\e[0m\"'";
+    system(command.c_str());
+    std::cout << "\nPress Enter to continue...";
+    std::cin.ignore();
+    std::cin.get();
+}
+
+// Function to display the main menu
+void displayMenu() {
+    clearScreenWithHeader();
+    setColor("\033[38;2;255;215;0m");
+    std::cout << "1. Claudemods Iso Script News\n";
+    std::cout << "2. Guide\n"; // New option
+    std::cout << "3. Download Updates\n";
+    std::cout << "4. Setup Scripts\n";
+    std::cout << "5. Creator Tools\n";
+    std::cout << "6. Exit\n"; // Shifted Exit to option 6
+    std::cout << "\nEnter your choice: ";
+    setColor("\033[0m");
+}
+
+// Function to display the Setup Scripts sub-menu
+void displaySetupScriptsMenu() {
+    clearScreenWithHeader();
+    setColor("\033[38;2;255;215;0m");
+    std::cout << "=== Setup Scripts ===\n\n";
+    std::cout << "1. Manual Setup Script\n";
+    std::cout << "2. Back to Main Menu\n"; // Removed the automatic option
+    std::cout << "\nEnter your choice: ";
+    setColor("\033[0m");
+}
+
+// Function to handle Setup Scripts sub-menu options
+void handleSetupScriptsMenu() {
+    int choice;
+    SetupScripts setupScripts; // Create an instance of the SetupScripts class
+    while (true) {
+        displaySetupScriptsMenu();
+        std::cin >> choice;
+        setColor("\033[38;2;255;215;0m");
+        switch (choice) {
+            case 1:
+                std::cout << "\nRunning Manual Setup Script...\n";
+                setupScripts.main_menu(); // Use the SetupScripts class to handle the setup
+                break;
+            case 2:
+                return; // Go back to the main menu
+            default:
+                std::cout << "\nInvalid choice! Please try again.\n";
+                break;
+        }
+        setColor("\033[0m");
+        std::cout << "\nPress Enter to continue...";
+        std::cin.ignore();
+        std::cin.get();
+    }
+}
+
+// Function to display the Creator Tools sub-menu
+void displayCreatorToolsMenu() {
+    clearScreenWithHeader();
+    setColor("\033[38;2;255;215;0m");
+    std::cout << "=== Creator Tools ===\n\n";
+    std::cout << "1. Claudemods SquashFS Creator\n";
+    std::cout << "2. Claudemods ISO Creator\n";
+    std::cout << "3. Back to Main Menu\n";
+    std::cout << "\nEnter your choice: ";
+    setColor("\033[0m");
+}
+
+// Function to handle Creator Tools sub-menu options
+void handleCreatorToolsMenu() {
+    int choice;
+    while (true) {
+        displayCreatorToolsMenu();
+        std::cin >> choice;
+        setColor("\033[38;2;255;215;0m");
+        switch (choice) {
+            case 1:
+                std::cout << "\nRunning Apex SquashFS Creator...\n";
+                runSquashFSTools(); // Call the SquashFS tools function from Squashfs.h
+                break;
+            case 2:
+                std::cout << "\nRunning Apex ISO Creator...\n";
+                iso_creator_menu(); // Call the ISO creator menu function from IsoCreator.h
+                break;
+            case 3:
+                return;
+            default:
+                std::cout << "\nInvalid choice! Please try again.\n";
+                break;
+        }
+        setColor("\033[0m");
+        std::cout << "\nPress Enter to continue...";
+        std::cin.ignore();
+        std::cin.get();
+    }
+}
+
+// Function to display the contents of Guide.txt (embedded via QRC)
+void displayGuide() {
+    QFile guideFile(":/Guide.txt");
+    if (!guideFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        std::cout << "Failed to open Guide.txt!\n";
+        return;
+    }
+
+    QTextStream in(&guideFile);
+    while (!in.atEnd()) {
+        std::cout << in.readLine().toStdString() << "\n";
+    }
+
+    guideFile.close();
+    std::cout << "\nPress Enter to continue...";
+    std::cin.ignore();
+    std::cin.get();
+}
+
+// Function to handle main menu options
+void handleMenuOption(int choice) {
+    setColor("\033[38;2;255;215;0m");
+    switch (choice) {
+        case 1:
+            downloadAndDisplayNews();
+            break;
+        case 2: // New option to display Guide.txt
+            displayGuide();
+            break;
+        case 3:
+        {
+            std::string url = "https://www.pling.com/p/2261487/";
+            std::string command = "xdg-open " + url; // Open the URL in the default browser
+            system(command.c_str());
+            std::cout << "\nOpening update page in your default browser...\n";
+        }
+        break;
+        case 4:
+            handleSetupScriptsMenu();
+            break;
+        case 5:
+            handleCreatorToolsMenu();
+            break;
+        case 6: // Updated exit option
+            std::cout << "\nExiting...\n";
+            exit(0);
+        default:
+            std::cout << "\nInvalid choice! Please try again.\n";
+            break;
+    }
+    setColor("\033[0m");
+}
+
+int main() {
+    int choice;
+    while (true) {
+        displayMenu();
+        std::cin >> choice;
+        handleMenuOption(choice);
+        std::cout << "\nPress Enter to continue...";
+        std::cin.ignore();
+        std::cin.get();
+    }
+    return 0;
+}
