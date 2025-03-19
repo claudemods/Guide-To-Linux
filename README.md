@@ -53,9 +53,10 @@ More to come I will update this soon!
 please remove the quotes "" from commands 
 they are hypothetical
 
-System Commands For Updating
+   <h1>System Commands For Updating</h1>
 
-Arch Updating
+
+   <h1>Arch Updating</h1>
 
 Update Package List
   sudo pacman -Sy
@@ -68,7 +69,9 @@ Reboot Your System before next steps
 Clean Old Packages
 sudo pacman -Scc
 
-Ubuntu/Debian
+
+   <h1>Ubuntu/Debian Updated</h1>
+
 
 Update Package List
 sudo apt update
@@ -88,7 +91,9 @@ sudo apt autoremove
 
 <div align="center">
   <pre>
-Changing Passwords, Usernames, Home Folder, and Adding to Group
+
+  <h1>Changing Passwords, Usernames, Home Folder, and Adding to Group</h1>
+
 
 To Change Your Password
 sudo passwd "username"
@@ -109,7 +114,8 @@ sudo usermod -aG "groupname" "username"
 
 <div align="center">
   <pre>
-Setup Wi-Fi in Konsole
+     <h1>Setup Wi-Fi in Konsole</h1>
+
 
 To Get a Wi-Fi List:
 nmcli d wifi
@@ -123,15 +129,21 @@ nmcli d wifi connect 2E:FB:FA:B9:82:94 password "tttodayjunior"
 
 <div align="center">
   <pre>
-Other Common Linux Commands And Steps For Arch, Ubuntu And Debian
+        <h1>Other Common Linux Commands And Steps For Arch, Ubuntu And Debian</h1>
+        install your drivers for your pc
+        sudo apt install ubuntu-drivers-common
+        sudo ubuntu-drivers autoinstall
+
   </pre>
 </div>
 
 <div align="center">
   <pre>
-Guide To Setting Up Arch, Ubuntu , Debian To Compile C++ Applications
+    
+  <h1>Guide To Setting Up Arch, Ubuntu , Debian To Compile C++ Applications</h1>
 
-Arch Needed Packages To Compile Qt6 Applications
+  <h1>Arch Needed Packages To Compile Qt6 Applications</h1>
+
 sudo -S base-devel qt6-base qt6-tools
 
 Files Need To Compile C++
@@ -141,22 +153,15 @@ Other Things That Can Be Used
 .h files to add different functions within the project 
 resources.qrc to embed other files
 
-Ubuntu/Debian Packages To Compile Qt6 Applications
+ <h1>Ubuntu/Debian Packages To Compile Qt6 Applications</h1>
+
 sudo apt install build-essential qt6-base-dev
 
-Files Need To Compile C++
-main.cpp main.pro
-
-Other Things That Can Be Used
-.h files to add different functions within the project 
-resources.qrc to embed other files
-  </pre>
 </div>
 
 <div align="center">
 
-
-Example Files For .cpp .pro And resources.qrc
+  <h1>Example Files For .cpp .pro And resources.qrc</h1>
 
 <a href="https://github.com/claudemods/Guide-To-Linux/blob/main/example.cpp">Example main.cpp</a>
 <a href="https://github.com/claudemods/Guide-To-Linux/blob/main/example.h">Example backend.h</a>
@@ -166,7 +171,8 @@ Example Files For .cpp .pro And resources.qrc
 
 <div align="center">
   <pre>
-Everyday Use Tools for Arch, Ubuntu, Debian
+      <h1>Everyday Use Tools for Arch, Ubuntu, Debian</h1>
+
 
 Edit Text in Konsole
 Install nano from your repos:
