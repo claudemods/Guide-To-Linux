@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/ApexBrowser.png</file>
+        <file>images/burn.png</file>
+        <file>images/transfer-file.png</file>
+        <file>images/usb.png</file>
+        <file>images/machine.png</file>
+        <file>images/pirate-ship.png</file>
+    </qresource>
+        <qresource prefix="/config">
+            <file>scripts.zip</file>
+        </qresource>
+    </RCC>
