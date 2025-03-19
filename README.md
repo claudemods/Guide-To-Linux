@@ -165,7 +165,7 @@ Files Need To Compile Cpp
 main.cpp main.pro
 Other Things That Can Be Used
 .h files to add different functions within the project 
-resource.qrc to embedded other files
+resources.qrc to embedded other files
 
 
 Ubuntu/Debian Packages To Compile Qt6 Applications
@@ -174,7 +174,7 @@ Files Need To Compile Cpp
 main.cpp main.pro
 Other Things That Can Be Used
 .h files to add different functions within the project 
-resource.qrc to embedded other files
+resources.qrc to embedded other files
 
 ```
 
