@@ -7,38 +7,37 @@
 Guide To Linux
 
   
-```
+<div align="center">
+  <pre>
+History of Myself: Aaron Douglas D'souza
 
- History Of My Self Aaron Douglas D'souza Im 28 From London In The Uk Though I Live In Manchester Now
+I am 28 years old, originally from London in the UK, though I now live in Manchester.
 
-I Hate The Word Noob or Newbie But i Was Once A New Linux User I Started Using Nobara
-                 Around September 2023 time 
+I hate the words "Noob" or "Newbie," but I was once a new Linux user. I started using Nobara around September 2023.
+From there, I began creating a custom taskbar, which can be seen in the project link below:
+Though the original color was burgundy and it was called "SpitFire."
 
-from There I Started Making A Custom Taskbar which Can Be Seen In This Project Link Below
-Though The Original Colour Was Bungundy And Called SpitFire
-Project Link https://github.com/claudemods/ApexKLGE-Minimal
+Project Link: <a href="https://github.com/claudemods/ApexKLGE-Minimal">ApexKLGE-Minimal</a>
 
-More Photos Of My Old Projects https://www.claudemods.co.uk/distributions/theme-photos
+More photos of my old projects can be found here:
+<a href="https://www.claudemods.co.uk/distributions/theme-photos">Theme Photos</a>
 
-I Was Originally A Advanced Windows User I Like To Test Betas/Devs
-I Infact Tested Windows 8/8.1/10/11 Before They Came Out And Was Testing Kde Plasma 6 Before It Came Out
+I was originally an advanced Windows user who enjoyed testing betas and development builds.
+In fact, I tested Windows 8/8.1/10/11 before their official releases and was testing KDE Plasma 6 before it came out.
 
-I Have Also Tested Skull And Bones By Ubisoft Before It Came Out I Like To Get Involved
+I have also tested games like "Skull and Bones" by Ubisoft before their release—I like to get involved.
 
-Since Im A Game Mod Creator/Music Creator And Now A Software Engineer
+Since I am a game mod creator, music creator, and now a software engineer,
+I have a lot of free time on my hands after putting my game mod updates on hold.
 
-I Have Alot Of Time On My Hands From Not Having A Job Since Putting My Game Mod Updates On Hold 
+I’ve made tons of scripts and applications for Linux, and I wish to help others with what I’ve learned.
 
-Ive Made Tones Of Scripts And Applications Linux Based And I wish To Help Others From What Ive Learnt
+Below, you’ll find many useful tutorials for Linux,
+including application building and complex Bash commands that everyday users might not know.
 
-Find Below Many Useful Tutorials For Linux
-Including Application Building And Complex Bash Commands Every Day Users Would Not Know
-
-
-
-More To Come i Will Update This More Soon.
-  
-```
+More to come—I will update this soon!
+  </pre>
+</div>
 
 <div align="center">
 
