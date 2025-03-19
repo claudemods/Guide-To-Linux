@@ -97,7 +97,7 @@ sudo apt autoremove
 
 To Change Your Password
 sudo passwd "username"
-Example: sudo passwd "root"
+Example: sudo passwd root
 
 Change Username and Home Folder
 Log in to the root account.
@@ -123,7 +123,7 @@ nmcli d wifi
 To Connect to Wi-Fi:
 nmcli d wifi connect "BSSID" password "yourpassword"
 Example (fake credentials):
-nmcli d wifi connect 2E:FB:FA:B9:82:94 password "tttodayjunior"
+nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior
   </pre>
 </div>
 
