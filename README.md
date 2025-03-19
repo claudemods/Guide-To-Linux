@@ -177,6 +177,17 @@ Other Things That Can Be Used
 resources.qrc to embedded other files
 
 ```
+```
+How To Compile The Qt6 Applications
+qmake6 -makefile
+make
+
+
+
+
+
+
+```
 
 ```
 Every day use tools for Arch, Ubuntu, Debian
