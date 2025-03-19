@@ -179,7 +179,7 @@ resources.qrc to embedded other files
 ```
 ```
 
-How to Use .pro And resources.pro
+Example Files For .pro And resources.qrc
 
 example .pro
 # Project name
