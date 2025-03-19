@@ -159,6 +159,7 @@ resources.qrc to embed other files
 Example Files For .cpp .pro And resources.qrc
 
 <a href="https://github.com/claudemods/Guide-To-Linux/blob/main/example.cpp">Example main.cpp</a>
+<a href="https://github.com/claudemods/Guide-To-Linux/blob/main/example.h">Example backend.h</a>
 <a href="https://github.com/claudemods/Guide-To-Linux/blob/main/example.pro">Example main.pro</a>
 <a href="https://github.com/claudemods/Guide-To-Linux/blob/main/example.qrc">Example resources.qrc</a>
 
