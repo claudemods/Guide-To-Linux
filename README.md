@@ -102,13 +102,16 @@ Example: sudo passwd root
 Change Username and Home Folder
 Log in to the root account.
 Change Username:
-usermod -l "newusername" "oldusername"
+sudo usermod -l "newusername" "oldusername"
+Example: sudo usermod -l apex manowar
 
 Change Home Folder:
 sudo usermod -d /home/"yournewusername" -m "yournewusername"
+Example: sudo usermod -d /home/apex -m apex
 
 Add User to Group:
 sudo usermod -aG "groupname" "username"
+Example: sudo usermod -aG arch apex
   </pre>
 </div>
 
