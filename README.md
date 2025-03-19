@@ -190,6 +190,7 @@ RESOURCES += resources.qrc
     </qresource>
 </RCC>
   </pre>
+  
 </div>
 
 <div align="center">
