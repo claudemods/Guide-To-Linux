@@ -84,24 +84,19 @@ More To Come i Will Update This More Soon....
 </div>
 
 <div align="center">
-  <pre>
-first off watch this from Chris Titus Tech 
 
-he has many tips to give in this video 
+  <h1>First, Watch This Video from Chris Titus Tech</h1>
+  <p>He shares many useful tips in this video:</p>
+  <a href="https://youtu.be/u0CIrKkBung?si=X7u6aIUhP7jTYLAA">Chris Titus Tech Video</a>
+  <p>Please support him if you can!</p>
 
-https://youtu.be/u0CIrKkBung?si=X7u6aIUhP7jTYLAA
-
-please support him if you can
-  </pre>
 </div>
 
 <div align="center">
   <pre>
 please remove the quotes "" from commands 
 they are hypothetical
-
 System Commands For Updating
-
 
 Arch Updating
 
@@ -112,6 +107,7 @@ Update All Installed Packages
 sudo pacman -Syu
 
 Reboot Your System before next steps
+
 Clean Old Packages
 sudo pacman -Scc
 
@@ -124,6 +120,7 @@ Update All Installed Packages
 sudo apt full-upgrade
 
 Reboot Your System Before Next Steps
+
 Clean Old Packages
 sudo apt-get clean
 
@@ -138,16 +135,12 @@ changing passwords, usernames, homefolder, add to group
 
 to change your password
 use command sudo passwd "username"
-e.g sudo passwd root
-enter your new password
-
-
+e.g sudo passwd "root"
 
 change your username, and home folder
 simply login to root account
  change username
 usermod -l "newusername" "oldusername"
-
 
 change home folder
 sudo usermod -d /home/"yournewusername" -m "yournewusername"
@@ -164,11 +157,10 @@ setup wifi in konsole
 to get a wifi list 
 use command nmcli d wifi 
 
-
 to connect to wifi
-nmcli d wifi connect "BSSID" password "your password"
-example full command 'fake credentials"
-nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior
+nmcli d wifi connect "BSSID" password "yourpassword"
+example full command 'fake credentials'
+nmcli d wifi connect 2E:FB:FA:B9:82:94 password "tttodayjunior"
   </pre>
 </div>
 
@@ -180,11 +172,14 @@ Other Common Linux Commands And Steps For Arch, Ubuntu And Debian
 
 <div align="center">
   <pre>
- Guide To Setting Up Arch, Ubuntu , Debian To Compile Cpp Applications
- Arch Needed Packages To Compile Qt6 Applications
+Guide To Setting Up Arch, Ubuntu , Debian To Compile Cpp Applications
+
+Arch Needed Packages To Compile Qt6 Applications
 sudo -S base-devel qt6-base qt6-tools
+
 Files Need To Compile Cpp
 main.cpp main.pro
+
 Other Things That Can Be Used
 .h files to add different functions within the project 
 resources.qrc to embedded other files
@@ -192,8 +187,10 @@ resources.qrc to embedded other files
 
 Ubuntu/Debian Packages To Compile Qt6 Applications
 sudo apt install build-essentials qt6-base-dev
+
 Files Need To Compile Cpp
 main.cpp main.pro
+
 Other Things That Can Be Used
 .h files to add different functions within the project 
 resources.qrc to embedded other files
@@ -217,7 +214,6 @@ HEADERS += squashfs.h
 HEADERS += usb.h
 HEADERS += isocreator.h
 HEADERS += setupscripts.h
-
 
 # C++ standard
 CONFIG += c++23
@@ -257,11 +253,8 @@ Every day use tools for Arch, Ubuntu, Debian
 edit text in konsole
 install nano from your repos
 
-
 custom application manager
 https://github.com/vinifmor/bauh
-
-
 
 custom dns manager
 https://github.com/DnsChanger/dnsChanger-desktop
