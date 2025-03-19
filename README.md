@@ -25,7 +25,7 @@ More photos of my old projects can be found here:
 I was originally an advanced Windows user who enjoyed testing betas and development builds.
 In fact, I tested Windows 8/8.1/10/11 before their official releases and was testing KDE Plasma 6 before it came out.
 
-I have also tested games like "Skull and Bones" by Ubisoft before their release—I like to get involved.
+I have also tested games like "Skull and Bones" by Ubisoft before their releas I like to get involved.
 
 Since I am a game mod creator, music creator, and now a software engineer,
 I have a lot of free time on my hands after putting my game mod updates on hold.
@@ -35,7 +35,7 @@ I’ve made tons of scripts and applications for Linux, and I wish to help other
 Below, you’ll find many useful tutorials for Linux,
 including application building and complex Bash commands that everyday users might not know.
 
-More to come—I will update this soon!
+More to come I will update this soon!
   </pre>
 </div>
 
