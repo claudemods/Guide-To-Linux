@@ -178,6 +178,49 @@ resources.qrc to embedded other files
 
 ```
 ```
+
+How to Use .pro And resources.pro
+
+example .pro
+# Project name
+TARGET = apexisocreatorgui
+
+# Required Qt modules
+QT += core gui widgets
+
+# Source files
+SOURCES += main.cpp
+HEADERS += squashfs.h
+HEADERS += usb.h
+HEADERS += isocreator.h
+HEADERS += setupscripts.h
+
+
+# C++ standard
+CONFIG += c++23
+
+RESOURCES += resources.qrc
+
+
+example resources.qrc
+<RCC>
+    <qresource prefix="/">
+        <file>images/ApexBrowser.png</file>
+        <file>images/burn.png</file>
+        <file>images/transfer-file.png</file>
+        <file>images/usb.png</file>
+        <file>images/machine.png</file>
+        <file>images/pirate-ship.png</file>
+    </qresource>
+        <qresource prefix="/config">
+            <file>scripts.zip</file>
+        </qresource>
+    </RCC>
+
+
+
+```
+```
 How To Compile The Qt6 Applications
 qmake6 -makefile
 make
