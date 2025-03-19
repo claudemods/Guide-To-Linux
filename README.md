@@ -132,7 +132,7 @@ nmcli d wifi connect 2E:FB:FA:B9:82:94 password tttodayjunior
 
 <div align="center">
   <pre>
-        <h1>Complexe Linux Commands, Steps For Arch, Ubuntu, Debian</h1>
+        <h1>Complex Linux Commands, Steps For Arch, Ubuntu, Debian</h1>
         install your drivers for your pc
         sudo apt install ubuntu-drivers-common
         sudo ubuntu-drivers autoinstall
