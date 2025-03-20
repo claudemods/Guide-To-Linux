@@ -225,5 +225,8 @@ https://github.com/claudemods/Custom-Bottle-For-Gamers
 custom arch installer gui
 https://github.com/claudemods/ApexArchInstallerAppImage
 
+create arch bootable usb
+https://github.com/claudemods/ApexBootableUsbAppimage
+
   </pre>
 </div>
