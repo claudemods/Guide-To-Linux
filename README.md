@@ -190,5 +190,40 @@ https://github.com/DnsChanger/dnsChanger-desktop
 
 Application Store Website
 www.pling.com
+
+KSystemlog
+https://apps.kde.org/en-gb/ksystemlog/
+
+
+scrcpy
+https://github.com/Genymobile/scrcpy
+
+spectacle
+https://apps.kde.org/en-gb/spectacle/
+
+ark
+https://apps.kde.org/en-gb/ark/
+
+stacer 
+https://appimage.github.io/Stacer/
+
+create arch isos with script
+https://www.pling.com/p/2261487
+
+create arch isos with gui application
+https://flatpak.opendesktop.org/p/2262634
+
+view and edit html
+https://github.com/claudemods/apex-htmlviewer
+
+custom decentralized browser
+https://github.com/claudemods/ApexBrowserAppImage
+
+setup bottles for games
+https://github.com/claudemods/Custom-Bottle-For-Gamers
+
+custom arch installer gui
+https://github.com/claudemods/ApexArchInstallerAppImage
+
   </pre>
 </div>
