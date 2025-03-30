@@ -204,6 +204,15 @@ https://apps.kde.org/en-gb/spectacle/
 ark
 https://apps.kde.org/en-gb/ark/
 
+file manager
+https://apps.kde.org/en-gb/dolphin/
+
+dolphin service menus for arch
+https://www.pling.com/p/2160116
+
+custom windows menu
+https://github.com/claudemods/11menu
+
 stacer 
 https://appimage.github.io/Stacer/
 
