@@ -213,6 +213,13 @@ https://www.pling.com/p/2160116
 custom windows menu
 https://github.com/claudemods/11menu
 
+hide files in dolphin
+https://github.com/claudemods/hideitems
+
+open dolphin as root 
+https://github.com/claudemods/Dolphin-As-Root-Plasma-5-and-Plasma-6
+
+
 stacer 
 https://appimage.github.io/Stacer/
 
@@ -233,6 +240,9 @@ https://github.com/claudemods/Custom-Bottle-For-Gamers
 
 custom arch installer gui
 https://github.com/claudemods/ApexArchInstallerAppImage
+
+custom arch btrfs installer script
+https://github.com/claudemods/Apex-InstallerBtrfs
 
 create arch bootable usb
 https://github.com/claudemods/ApexBootableUsbAppimage
