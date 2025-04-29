@@ -232,6 +232,8 @@ https://flatpak.opendesktop.org/p/2262634
 Create Docker Containers From Cloned Linux Systems
 https://github.com/claudemods/ACCU
 
+Download The Qt6 C++ App: <a href="https://github.com/claudemods/Guide-To-Linux/tree/main/Qt6C%2B%2BApp">GuideToLinux</a>
+
 view and edit html
 https://github.com/claudemods/apex-htmlviewer
 
