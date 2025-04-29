@@ -232,8 +232,6 @@ https://flatpak.opendesktop.org/p/2262634
 Create Docker Containers From Cloned Linux Systems
 https://github.com/claudemods/ACCU
 
-Download The Qt6 C++ App: <a href="https://github.com/claudemods/Guide-To-Linux/tree/main/Qt6C%2B%2BApp">GuideToLinux</a>
-
 view and edit html
 https://github.com/claudemods/apex-htmlviewer
 
@@ -251,6 +249,12 @@ https://github.com/claudemods/Apex-InstallerBtrfs
 
 create arch bootable usb
 https://github.com/claudemods/ApexBootableUsbAppimage
+
+
+Download The Qt6 C++ App: <a href="https://github.com/claudemods/Guide-To-Linux/tree/main/Qt6C%2B%2BApp">GuideToLinux</a>
+
+![Screenshot_20250429_220332](https://github.com/user-attachments/assets/85111924-de5b-451f-a48a-9f91c6db0fb2)
+
 
   </pre>
 </div>
